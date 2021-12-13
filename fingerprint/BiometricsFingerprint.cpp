@@ -30,7 +30,9 @@
 #define OP_DISABLE_FP_LONGPRESS 4
 #define OP_RESUME_FP_ENROLL 8
 #define OP_FINISH_FP_ENROLL 10
+
 #define OP_DISPLAY_NOTIFY_PRESS 9
+#define OP_DISPLAY_AOD_MODE 8
 #define OP_DISPLAY_SET_DIM 10
 
 namespace android {
@@ -92,6 +94,18 @@ Return<void> BiometricsFingerprint::onFingerUp() {
     return Void();
 }
 
+Return<void> BiometricsFingerprint::onShowUdfpsOverlay() {
+    this->mVendorDisplayService->setMode(OP_DISPLAY_SET_DIM, 1);
+    return Void();
+}
+
+Return<void> BiometricsFingerprint::onHideUdfpsOverlay() {
+    mVendorDisplayService->setMode(OP_DISPLAY_SET_DIM, 0);
+    mVendorDisplayService->setMode(OP_DISPLAY_AOD_MODE, 0);
+    mVendorDisplayService->setMode(OP_DISPLAY_NOTIFY_PRESS, 0);
+    return Void();
+}
+
 Return<RequestStatus> BiometricsFingerprint::ErrorFilter(int32_t error) {
     switch(error) {
         case 0: return RequestStatus::SYS_OK;
@@ -111,6 +125,7 @@ Return<RequestStatus> BiometricsFingerprint::ErrorFilter(int32_t error) {
             return RequestStatus::SYS_UNKNOWN;
     }
 }
+
 
 // Translate from errors returned by traditional HAL (see fingerprint.h) to
 // HIDL-compliant FingerprintError.
