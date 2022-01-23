@@ -1,4 +1,5 @@
 
+
 # Copyright (C) 2018 The LineageOS Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -44,6 +45,9 @@ TARGET_USES_64_BIT_BINDER := true
 # Bootloader
 TARGET_BOOTLOADER_BOARD_NAME := kona
 TARGET_NO_BOOTLOADER := true
+
+# Animation for offline charging
+TARGET_PIXEL_CHARGE_ANIM := true
 
 # Kernel
 BOARD_BOOT_HEADER_VERSION := 2
@@ -119,6 +123,7 @@ TARGET_USES_ION := true
 TARGET_USES_QCOM_DISPLAY_BSP := true
 TARGET_USES_QTI_MAPPER_2_0 := true
 TARGET_USES_QTI_MAPPER_EXTENSIONS_1_1 := true
+TARGET_USES_VULKAN := true
 
 # DRM
 TARGET_ENABLE_MEDIADRM_64 := true

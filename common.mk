@@ -23,6 +23,14 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/gsi_keys.mk)
 # Get non-open-source specific aspects
 $(call inherit-product, vendor/oneplus/sm8250-common/sm8250-common-vendor.mk)
 
+#Messaging
+    PRODUCT_PACKAGES += \
+    Message
+
+#GCamGo
+    PRODUCT_PACKAGES += \
+    GCamGo
+
 # Additional native libraries
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/public.libraries.txt:$(TARGET_COPY_OUT_VENDOR)/etc/public.libraries.txt
@@ -378,7 +386,7 @@ PRODUCT_PACKAGES += \
 
 # Power
 PRODUCT_PACKAGES += \
-    android.hardware.power-service \
+    android.hardware.power-service-qti \
     vendor.qti.hardware.perf@2.0.vendor
 
 # QMI
@@ -556,7 +564,7 @@ PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
     ro.surface_flinger.has_wide_color_display=true \
     ro.surface_flinger.max_virtual_display_dimension=4096 \
     ro.surface_flinger.protected_contents=true \
-    ro.surface_flinger.refresh_rate_switching=true \
+    ro.surface_flinger.set_touch_timer_ms=200 \
     ro.surface_flinger.use_color_management=true \
     ro.surface_flinger.wcg_composition_dataspace=143261696
 
