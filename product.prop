@@ -11,6 +11,8 @@ ro.com.baidu.input.pad_land_l=19
 ro.com.baidu.input.pad_land_r=19
 ro.com.baidu.input.pad_land_b=10
 
+# Graphics
+debug.sf.enable_hwc_vds=0
 
 # Octavi
 ro.octavi.maintainer="ItsBunnyBtch"

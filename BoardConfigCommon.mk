@@ -23,6 +23,8 @@ BOARD_VENDOR := oneplus
 
 COMMON_PATH := device/oneplus/sm8250-common
 
+
+
 # Architecture
 TARGET_ARCH := arm64
 TARGET_ARCH_VARIANT := armv8-a
@@ -163,6 +165,8 @@ TARGET_COPY_OUT_VENDOR := vendor
 
 # Power
 TARGET_TAP_TO_WAKE_NODE := "/proc/touchpanel/double_tap_enable"
+TARGET_POWERHAL_MODE_EXT := $(COMMON_PATH)/power/mode-ext.cpp
+TARGET_POWERHAL_BOOST_EXT := $(COMMON_PATH)/power/boost-ext.cpp
 
 # Recovery
 BOARD_INCLUDE_DTB_IN_BOOTIMG := true
