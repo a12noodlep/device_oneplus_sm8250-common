@@ -15,6 +15,10 @@ camera.disable_zsl_mode=true
 # Charger
 ro.charger.disable_init_blank=true
 
+# Octavi's props for 8 Series
+ro.octavi.hw.cam=48Mp,48Mp,8Mp:5mp
+ro.octavi.hw.cpu=Snapdragon 865 (07nm)
+
 # Dexopt
 dalvik.vm.dex2oat64.enabled=true
 
