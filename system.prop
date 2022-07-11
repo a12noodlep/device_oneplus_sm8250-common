@@ -47,6 +47,9 @@ media.settings.xml=/vendor/etc/media_profiles_vendor.xml
 # Netflix
 ro.netflix.bsp_rev=Q8250-19134-1
 
+# HDR NF
+persist.pixelpropsutils.spoof_netflix=false
+
 # OnePlus
 ro.vendor.product.manufacturer.db=OP_PHONE
 ro.vendor.product.device.db=OP_DEVICE
